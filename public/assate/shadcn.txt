@@ -1,0 +1,90 @@
+Image এ লাল দাগ দেয়া file/folder delete করেন।
+
+তারপর : 
+আপনার প্রজেক্ট ফাইটি vs code editor এ Open করেন।
+git এর terminal open করেন।
+
+প্রজেক্ট ফাইল এর terminal এ এই কোডটি past করেন :  npx shadcn-ui@latest init
+
+install করার সময় আপনাকে কিছু প্রশ্ন করবে মনোযোগ সহকারে দেখে দেখে মিলাই নিয়ে উত্তর দিন।
+Would you like to use TypeScript (recommended)? no / yes (no / yes এখানে আপনার মতো করে দিতে পারেন)
+Which style would you like to use? › Default (এখানে পরিবর্তন করার দরকার নাই)
+Which color would you like to use as base color? › Slate (এখানে আপনার মতো করে দিতে পারেন)
+Where is your global CSS file? › › app/globals.css (এখানে পরিবর্তন করতে হবে , নিজ হাতে লিখে দিবেন  => src/app/globals.css)
+Do you want to use CSS variables for colors? › no / yes (এখানে আপনার মতো করে দিতে পারেন)
+Where is your tailwind.config.js located? › tailwind.config.js (এখানে পরিবর্তন করার দরকার নাই)
+Configure the import alias for components: › @/components (এখানে পরিবর্তন করার দরকার নাই)
+Configure the import alias for utils: › @/lib/utils (এখানে পরিবর্তন করার দরকার নাই)
+Are you using React Server Components? › no / yes (এখানে পরিবর্তন করার দরকার নাই)
+
+এগুলো ঠিকঠাক ভাবে install হয়ে গেলে নিচের নিয়মটি অনুসরন করেন।
+
+=========ধারাবাহিক ভাবে install করেন।=================
+Step:1:- npx shadcn-ui@latest add dialog
+Step:2:- npx shadcn-ui@latest add button
+Step:3:- npx shadcn-ui@latest add input
+Step:4:- npx shadcn-ui@latest add label
+
+কাজ শেষ।
+==================================
+এই ফাইলগুলো সবার উপরে পেস্ট করে দিতে পারেন।
+==================================
+import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+
+==================================
+এই কোডগুলো যেখানে কাজ করাতে চাচ্ছেন সেখানে পেস্ট করে দেন হয়ে যাবে।
+==================================
+
+<Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Edit Profile</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input
+              id="name"
+              defaultValue="Pedro Duarte"
+              className="col-span-3"
+            />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="username" className="text-right">
+              Username
+            </Label>
+            <Input
+              id="username"
+              defaultValue="@peduarte"
+              className="col-span-3"
+            />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+
+
+
